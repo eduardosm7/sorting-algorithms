@@ -24,6 +24,10 @@ Another simple in-place comparison sort, creating a sorted list every iteration 
 
 One of the more efficient comparison sorts, very similar to selection sort. 
 
+- [radixsort](https://en.wikipedia.org/wiki/Radix_sort)
+
+radix sort is a non-comparative integer sorting algorithm that sorts data with integer keys by grouping keys by the individual digits which share the same significant position and value.  
+
 - [MergeSort](https://en.wikipedia.org/wiki/Merge_sort)
 
 A divide and conquer based Sorting technique, preserves the input order of equal elements in the sorted output(stable).
