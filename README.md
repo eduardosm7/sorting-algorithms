@@ -12,11 +12,11 @@ Finally the program outputs the time consumed just to sort the array.
 
 Bubble sort algorithm starts by comparing the first two elements of an array and swapping if necessary, i.e., if you want to sort the elements of array in ascending order and if the first element is greater than second then, you need to swap the elements but, if the first element is smaller than second, you mustn't swap the element. Then, again second and third elements are compared and swapped if it is necessary and this process go on until last and second last element is compared and swapped. This completes the first step of bubble sort.
 
-If there are n elements to be sorted then, the process mentioned above should be repeated n-1 times to get required result. But, for better performance, in second step, last and second last elements are not compared becuase, the proper element is automatically placed at last after first step. Similarly, in third step, last and second last and second last and third last elements are not compared and so on.
+If there are n elements to be sorted then, the process mentioned above should be repeated n-1 times to get required result. But, for better performance, in second step, last and second last elements are not compared because, the proper element is automatically placed at last after first step. Similarly, in third step, last and second last and second last and third last elements are not compared and so on.
 
 - [insertion sort](https://en.wikipedia.org/wiki/Insertion_sort)
 
-Aimple sorting algorithm that builds the sorted array one element at a time, creating a sorted list every iteration before adding a new element.
+A simple sorting algorithm that builds the sorted array one element at a time, creating a sorted list every iteration before adding a new element.
 
 - [selection sort](https://en.wikipedia.org/wiki/Selection_sort)
 
@@ -41,7 +41,7 @@ This is repeated until the entire array is sorted.
 
 - [radixsort](https://en.wikipedia.org/wiki/Radix_sort)
 
-radix sort is a non-comparative integer sorting algorithm that sorts data with integer keys by grouping keys by the individual digits which share the same significant position and value.  
+Radix sort is a non-comparative integer sorting algorithm that sorts data with integer keys by grouping keys by the individual digits which share the same significant position and value.  
 The lower bound for Comparison based sorting algorithm (Merge Sort, Heap Sort, Quick-Sort .. etc) is Ω(nLogn), i.e., they cannot do better than nLogn.
 Counting sort is a linear time sorting algorithm that sort in O(n+k) time when elements are in range from 1 to k.
 
