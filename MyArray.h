@@ -82,8 +82,11 @@ class MyArray
                 case '6':
                     heap_sort(arr,arr_size);
                     break;
-                case '7' : 
+                case '7' :
                     radixsort(arr , arr_size);
+                    break;
+                case '8':
+                  pigeonholeSort(arr, arr_size);
             }
         }
 
