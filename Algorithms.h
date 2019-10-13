@@ -187,44 +187,71 @@ void heap_sort(int arr[], int n)
 
 //=========Heap Sort===========
 
-int getMax(int arr[], int n) 
-{ 
-    int mx = arr[0]; 
-    for (int i = 1; i < n; i++) 
-        if (arr[i] > mx) 
-            mx = arr[i]; 
-    return mx; 
-} 
-  
-void countSort(int arr[], int n, int exp) 
-{ 
-    int output[n]; 
-    int i, count[10] = {0}; 
-  
-    for (i = 0; i < n; i++) 
-        count[ (arr[i]/exp)%10 ]++; 
-  
-    for (i = 1; i < 10; i++) 
-        count[i] += count[i - 1]; 
-   
-    for (i = n - 1; i >= 0; i--) 
-    { 
-        output[count[ (arr[i]/exp)%10 ] - 1] = arr[i]; 
-        count[ (arr[i]/exp)%10 ]--; 
-    } 
-   
-    for (i = 0; i < n; i++) 
-        arr[i] = output[i]; 
-} 
-  
-void radixsort(int arr[], int n) 
-{ 
- 
-    int m = getMax(arr, n); 
-  
-    for (int exp = 1; m/exp > 0; exp *= 10) 
-        countSort(arr, n, exp); 
-} 
+int getMax(int arr[], int n)
+{
+    int mx = arr[0];
+    for (int i = 1; i < n; i++)
+        if (arr[i] > mx)
+            mx = arr[i];
+    return mx;
+}
+
+void countSort(int arr[], int n, int exp)
+{
+    int output[n];
+    int i, count[10] = {0};
+
+    for (i = 0; i < n; i++)
+        count[ (arr[i]/exp)%10 ]++;
+
+    for (i = 1; i < 10; i++)
+        count[i] += count[i - 1];
+
+    for (i = n - 1; i >= 0; i--)
+    {
+        output[count[ (arr[i]/exp)%10 ] - 1] = arr[i];
+        count[ (arr[i]/exp)%10 ]--;
+    }
+
+    for (i = 0; i < n; i++)
+        arr[i] = output[i];
+}
+
+//=============Pigeonhole Sort==========
+
+void pigeonholeSort(int arr[], int n)
+{
+    int min = arr[0], max = arr[0];
+    for (int i = 1; i < n; i++)
+    {
+        if (arr[i] < min)
+            min = arr[i];
+        if (arr[i] > max)
+            max = arr[i];
+    }
+    int range = max - min + 1;
+    vector<int> holes[range];
+    for (int i = 0; i < n; i++)
+        holes[arr[i]-min].push_back(arr[i]);
+    int index = 0;
+    for (int i = 0; i < range; i++)
+    {
+       vector<int>::iterator it;
+       for (it = holes[i].begin(); it != holes[i].end(); ++it)
+            arr[index++]  = *it;
+    }
+}
+
+//=======================================
+
+void radixsort(int arr[], int n)
+{
+
+    int m = getMax(arr, n);
+
+    for (int exp = 1; m/exp > 0; exp *= 10)
+        countSort(arr, n, exp);
+}
 
 //=================
 
