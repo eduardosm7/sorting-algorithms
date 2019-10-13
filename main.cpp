@@ -40,6 +40,7 @@ int main()
          << "5. Merge Sort\n"
          << "6. Heap Sort\n"
          << "7. Radix Sort\n"
+         << "8. Pigeonhole Sort\n"
          << "-> ";
 
     cin >> algorithm;
